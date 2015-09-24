@@ -27,7 +27,7 @@ class lmmsweb {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    notify  => Exec['$lmmsweb::params::a2enconf fqdn']
+    notify  => Exec["$lmmsweb::params::a2enconf fqdn"]
   }
   
   exec {"$lmmsweb::params::a2enconf fqdn":
