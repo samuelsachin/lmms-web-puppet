@@ -9,7 +9,7 @@
 # Requires: see Modulefile
 #
 # Sample Usage:
-#
+#sambu
 class lmmsweb {
 
 }
