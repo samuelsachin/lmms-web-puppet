@@ -15,7 +15,7 @@ class lmmsweb {
   include lmmsweb::service
   
   
-  file {'/var/www/vhosts/lmmsweb.mapofmedicine.com':
+  file {['/var/www/vhosts','/var/www/vhosts/lmmsweb.mapofmedicine.com']:
     ensure => directory,
     recurse => true,
     mode => '0755',
