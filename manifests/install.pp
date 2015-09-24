@@ -4,4 +4,7 @@ class lmmsweb::install {
     ensure => present,
   }
   
+  lmmsweb::loadmodule {['rewrite', 'proxy']:
+    require => Package[$::lmmsweb::params::apache_package_name],
+  }
 }

@@ -5,6 +5,11 @@ class lmmsweb::params {
       $apache_service_name = 'apache2'
       $vhost_conf_template = 'lmmsweb/localise.mapofmedicine.com.conf.erb'
       $sites_enabled_directory = "/etc/apache2/sites-enabled"
+      $sites_available_directory = "/etc/apache2/sites-available"
+      $mods_enabled_directory = "/etc/apache2/mods-enabled"
+      $mods_available_directory = "/etc/apache2/mods-available"
+      $a2enmod = "/usr/sbin/a2enmod"
+      $readlink = "/bin/readlink"
     }
     RedHat: {
       $apache_package_name = 'httpd'
