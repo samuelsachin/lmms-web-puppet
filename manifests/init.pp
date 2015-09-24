@@ -14,6 +14,15 @@ class lmmsweb {
   include lmmsweb::install
   include lmmsweb::service
   
+  file {'/etc/hosts':
+    content => template("lmmsweb/hosts.conf.erb"),
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644'
+    
+  }
+  
+  
   file {['/var/www/vhosts','/var/www/vhosts/lmmsweb.mapofmedicine.com']:
     ensure => directory,
     recurse => true,
