@@ -11,6 +11,7 @@
 # Sample Usage:
 #sambu
 class lmmsweb {
+  include lmmsweb::params
   include lmmsweb::install
   include lmmsweb::service
   
@@ -19,9 +20,20 @@ class lmmsweb {
     owner   => 'root',
     group   => 'root',
     mode    => '0644'
-    
   }
   
+  file {$lmmsweb::params::fqdnconf:
+    content => "ServerName localhost",
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    notify  => Exec['$lmmsweb::params::a2enconf fqdn']
+  }
+  
+  exec {"$lmmsweb::params::a2enconf fqdn":
+    require => File[$lmmsweb::params::fqdnconf],
+    notify => Class['lmmsweb::service']
+  }
   
   file {['/var/www/vhosts','/var/www/vhosts/lmmsweb.mapofmedicine.com']:
     ensure => directory,
