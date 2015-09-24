@@ -10,9 +10,11 @@ class lmmsweb::params {
       $mods_enabled_directory = "/etc/apache2/mods-enabled"
       $mods_available_directory = "/etc/apache2/mods-available"
       $a2enmod = "/usr/sbin/a2enmod"
+      $a2ensite = "/usr/sbin/a2ensite"
       $a2enconf = "/usr/sbin/a2enconf"
       $fqdnconf = "/etc/apache2/conf-available/fqdn.conf"
       $readlink = "/bin/readlink"
+      
     }
     RedHat: {
       $apache_package_name = 'httpd'
