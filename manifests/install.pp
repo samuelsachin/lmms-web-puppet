@@ -3,4 +3,5 @@ class lmmsweb::install {
   package { [$::lmmsweb::params::apache_package_name]:
     ensure => present,
   }
+  
 }
