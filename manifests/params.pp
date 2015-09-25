@@ -3,6 +3,7 @@ class lmmsweb::params {
     Debian: {
       $apache_package_name = 'apache2'
       $apacheutils_package_name = 'apache2-utils'
+      $logrotate_package_name   = 'logrotate'
       $apache_service_name = 'apache2'
       $vhost_conf_template = 'lmmsweb/localise.mapofmedicine.com.conf.erb'
       $sites_enabled_directory = "/etc/apache2/sites-enabled"
