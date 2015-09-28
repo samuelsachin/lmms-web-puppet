@@ -1,5 +1,6 @@
 define lmmsweb::vhost (
- $template='lmmsweb/localise.mapofmedicine.com.conf.erb', 
+ $template='', 
+ $app_hostname=''
 ){
   
   include lmmsweb::params

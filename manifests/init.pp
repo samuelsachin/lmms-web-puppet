@@ -48,6 +48,8 @@ class lmmsweb {
   }
   
   lmmsweb::vhost {'lmmsweb.mapofmedicine.com':
-    template => "lmmsweb/localise.mapofmedicine.com.conf.erb",
+    template      => "lmmsweb/localise.mapofmedicine.com.conf.erb",
+    app_hostname  => "lmms-app.internal.mapofmedicine.com",
+    
   }
 }
