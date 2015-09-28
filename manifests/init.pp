@@ -27,6 +27,7 @@ class lmmsweb {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+    require => Class['lmmsweb::install'],
     notify  => Exec["$lmmsweb::params::a2enconf fqdn"]
   }
   
