@@ -27,14 +27,14 @@ class lmmsweb {
     recurse => true,
     mode => '0755',
     owner => 'root',
-    group => 'root'
+    group => 'root',
+    require => Class['lmmsweb::install'],
   } ->
   file {$lmmsweb::params::fqdnconf:
     content => "ServerName localhost",
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    require => Class['lmmsweb::install'],
     notify  => Exec["$lmmsweb::params::a2enconf fqdn"]
   }
   
