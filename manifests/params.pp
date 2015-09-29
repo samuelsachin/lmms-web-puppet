@@ -14,6 +14,7 @@ class lmmsweb::params {
       $a2ensite = "/usr/sbin/a2ensite"
       $a2enconf = "/usr/sbin/a2enconf"
       $fqdnconf = "/etc/apache2/conf-available/fqdn.conf"
+      $fqdnconfdir = "/etc/apache2/conf-available"
       $readlink = "/bin/readlink"
       
     }

@@ -22,6 +22,13 @@ class lmmsweb {
     mode    => '0644'
   }
   
+  file {[$lmmsweb::params::fqdnconfdir]:
+    ensure => directory,
+    recurse => true,
+    mode => '0755',
+    owner => 'root',
+    group => 'root'
+  } ->
   file {$lmmsweb::params::fqdnconf:
     content => "ServerName localhost",
     owner   => 'root',
@@ -36,7 +43,7 @@ class lmmsweb {
     notify => Class['lmmsweb::service']
   }
   
-  file {['/var/www/vhosts','/var/www/vhosts/lmmsweb.mapofmedicine.com']:
+  file {['/var/www', '/var/www/vhosts','/var/www/vhosts/lmmsweb.mapofmedicine.com']:
     ensure => directory,
     recurse => true,
     mode => '0755',
